@@ -1,7 +1,7 @@
 From 948b32c13781437bd62334f87163688b73c5ff04 Mon Sep 17 00:00:00 2001
 From: jaimergp <jaimergp@users.noreply.github.com>
 Date: Mon, 12 Feb 2024 10:28:16 +0100
-Subject: [PATCH 3/5] control make parallelism
+Subject: [PATCH 3/6] control make parallelism
 
 ---
  dgl_sparse/build.sh            | 4 ++--
