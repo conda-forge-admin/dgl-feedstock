@@ -36,6 +36,10 @@ source:
     git_url: https://github.com/imneme/pcg-cpp.git
     git_rev: 428802d1a5634f96bcd0705fab379ff0113bcf13
 
+  - folder: third_party/taskflow
+    git_url: https://github.com/taskflow/taskflow.git
+    git_rev: 7d9e85b6b2e9bf501021f857f2f3cbe43bc37c85
+
 build:
   skip: true  # [win or py<39]
   # pytorch 2.5 builds in conda-forge do not support CUDA 11.8 anymore
