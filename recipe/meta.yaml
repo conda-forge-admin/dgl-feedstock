@@ -42,7 +42,7 @@ source:
     git_rev: 7d9e85b6b2e9bf501021f857f2f3cbe43bc37c85
 
 build:
-  skip: true  # [win or py<39]
+  skip: true  # [win]
   # pytorch 2.5 builds in conda-forge do not support CUDA 11.8 anymore
   skip: true  # [cuda_compiler_version == "11.8"]
   number: 0
