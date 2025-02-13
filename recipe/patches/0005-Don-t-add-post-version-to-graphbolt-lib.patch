@@ -1,13 +1,26 @@
-From 8fdee086ddf556dc7e46e156daca40a67dbae2b4 Mon Sep 17 00:00:00 2001
+From 1c5404e6a18f0d9028822ecd4929571733845d48 Mon Sep 17 00:00:00 2001
 From: Klaus Zimmermann <klaus.zimmermann@quansight.com>
 Date: Wed, 13 Mar 2024 11:09:17 +0100
 Subject: [PATCH 5/6] Don't add post version to graphbolt lib
 
 ---
- graphbolt/find_cmake.py          | 2 +-
- python/dgl/graphbolt/__init__.py | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ dgl_sparse/find_cmake.py            | 2 +-
+ graphbolt/find_cmake.py             | 2 +-
+ python/dgl/graphbolt/__init__.py    | 2 +-
+ tensoradapter/pytorch/find_cmake.py | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
 
+diff --git a/dgl_sparse/find_cmake.py b/dgl_sparse/find_cmake.py
+index 570b7958..e5cf00aa 100644
+--- a/dgl_sparse/find_cmake.py
++++ b/dgl_sparse/find_cmake.py
+@@ -7,5 +7,5 @@ cmake_prefix_path = getattr(
+     "cmake_prefix_path",
+     os.path.join(os.path.dirname(torch.__file__), "share", "cmake"),
+ )
+-version = torch.__version__.split("+")[0]
++version = torch.__version__.split("+")[0].split(".post")[0]
+ print(";".join([cmake_prefix_path, version]))
 diff --git a/graphbolt/find_cmake.py b/graphbolt/find_cmake.py
 index 570b7958..e5cf00aa 100644
 --- a/graphbolt/find_cmake.py
@@ -32,3 +45,14 @@ index 006b91d3..04eb2abf 100644
  
      if sys.platform.startswith("linux"):
          basename = f"libgraphbolt_pytorch_{vers}.so"
+diff --git a/tensoradapter/pytorch/find_cmake.py b/tensoradapter/pytorch/find_cmake.py
+index 570b7958..e5cf00aa 100644
+--- a/tensoradapter/pytorch/find_cmake.py
++++ b/tensoradapter/pytorch/find_cmake.py
+@@ -7,5 +7,5 @@ cmake_prefix_path = getattr(
+     "cmake_prefix_path",
+     os.path.join(os.path.dirname(torch.__file__), "share", "cmake"),
+ )
+-version = torch.__version__.split("+")[0]
++version = torch.__version__.split("+")[0].split(".post")[0]
+ print(";".join([cmake_prefix_path, version]))
