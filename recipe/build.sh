@@ -53,6 +53,7 @@ if [ ${cuda_compiler_version} != "None" ]; then
     # Add more precedence to thrust, cub, libcudacxx include directories;
     # otherwise, cuda-cccl's get used, which are older and incompatible with dgl usage.
     CUDA_CMAKE_OPTIONS+=" -DCUDA_NVCC_FLAGS=-Xcompiler=-I${SRC_DIR}/third_party/cccl/thrust,-I${SRC_DIR}/third_party/cccl/cub,-I${SRC_DIR}/third_party/cccl/libcudacxx/include"
+	export CUDA_TOOLKIT_ROOT_DIR=$CUDA_HOME
 	CMAKE_ARGS="${CMAKE_ARGS} -DNvToolExt_SEARCH_DIRS=${CUDA_TOOLKIT_ROOT_DIR}/include/nvtx3"
     CMAKE_ARGS="${CMAKE_ARGS} -DNvToolExt_INCLUDE_DIR=${CUDA_TOOLKIT_ROOT_DIR}/include/nvtx3"
     CMAKE_ARGS="${CMAKE_ARGS} -DNvToolExt_LIBRARIES=${CUDA_TOOLKIT_ROOT_DIR}/lib/libnvToolsExt.so"
