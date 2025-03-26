@@ -55,8 +55,10 @@ build:
   missing_dso_whitelist:
     - '*/libcuda.*'  # [linux64]
   string: cuda{{ cuda_compiler_version | replace('.', '') }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != "None"]
-  ignore_run_exports:
+  ignore_run_exports_from:
     - gklib
+    # see comment below
+    - libprotobuf
 
 requirements:
   build:
@@ -95,6 +97,8 @@ requirements:
     - libcblas
     - liblapack
     - liblapacke
+    # ensure https://github.com/conda-forge/pytorch-cpu-feedstock/pull/382 or newer gets pulled in
+    - libprotobuf >=5.29
     - liburing  # [linux]
     - metis ==5.1.1
     - nanoflann <=1.4.2
