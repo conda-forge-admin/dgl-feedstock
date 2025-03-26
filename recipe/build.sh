@@ -68,16 +68,16 @@ fi
 
 # SEE PR #5 (can't build to do aligned_alloc missing on osx)
 if [[ $(uname) == "Darwin" ]]; then
-	USE_LIBXSMM=OFF
+    USE_LIBXSMM=OFF
     USE_LIBURING=OFF
-	# https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
-	# error: 'shared_mutex' is unavailable: introduced in macOS 10.1
-	CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+    # https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
+    # error: 'shared_mutex' is unavailable: introduced in macOS 10.1
+    CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 elif [[ $(uname) == "Linux" ]]; then
     USE_LIBXSMM=ON
     USE_LIBURING=ON
 else
-	USE_LIBXSMM=ON
+    USE_LIBXSMM=ON
     USE_LIBURING=OFF
 fi
 
