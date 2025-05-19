@@ -28,6 +28,8 @@ liblapack:
 - 3.9.* *netlib
 liblapacke:
 - 3.9.* *netlib
+libprotobuf:
+- 5.29.3
 libtorch:
 - '2.6'
 llvm_openmp:
