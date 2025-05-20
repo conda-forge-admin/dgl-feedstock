@@ -25,13 +25,37 @@ source:
     git_url: https://github.com/NVIDIA/cuCollections.git
     git_rev: 6c0d7ee190a167c6976af0f7c628a43d13b78f38
 
+  - folder: third_party/dlpack
+    git_url: https://github.com/dmlc/dlpack.git
+    git_rev: e2bdd3bee8cb6501558042633fa59144cc8b7f5f
+
+  - folder: third_party/dmlc-core
+    git_url: https://github.com/dmlc/dmlc-core.git
+    git_rev: bfad207b448480783a1f428ae3d93d87032d8349
+
   - folder: third_party/googletest
     git_url: https://github.com/google/googletest.git
     git_rev: f8d7d77c06936315286eb55f8de22cd23c188571
 
+  - folder: third_party/GKlib
+    git_url: https://github.com/KarypisLab/GKlib.git
+    git_rev: 8bd6bad750b2b0d90800c632cf18e8ee93ad72d7
+
+  - folder: third_party/liburing
+    git_url: https://github.com/axboe/liburing.git
+    git_rev: f7dcc1ea60819475dffd3a45059e16f04381bee7
+
   - folder: third_party/libxsmm
     git_url: https://github.com/libxsmm/libxsmm.git
     git_rev: 80090603e43f6ddc870cc42e1403dd0af07744cc
+
+  - folder: third_party/METIS
+    git_url: https://github.com/KarypisLab/METIS.git
+    git_rev: e0f1b88b8efcb24ffa0ec55eabb78fbe61e58ae7
+
+  - folder: third_party/nanoflann
+    git_url: https://github.com/jlblancoc/nanoflann.git
+    git_rev: 4c47ca200209550c5628c89803591f8a753c8181
 
   - folder: third_party/pcg
     git_url: https://github.com/imneme/pcg-cpp.git
@@ -40,6 +64,10 @@ source:
   - folder: third_party/taskflow
     git_url: https://github.com/taskflow/taskflow.git
     git_rev: 7d9e85b6b2e9bf501021f857f2f3cbe43bc37c85
+
+  - folder: third_party/tsl_robin_map
+    git_url: https://github.com/Tessil/robin-map.git
+    git_rev: 1115dad3ffa0994e3f43b693d9b9cc99944c64c1
 
 build:
   skip: true  # [win]
